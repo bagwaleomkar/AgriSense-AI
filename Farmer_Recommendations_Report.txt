@@ -1,0 +1,251 @@
+================================================================================
+AGRISENSE AI - FARMER RECOMMENDATIONS REPORT
+================================================================================
+
+📋 EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+Total Crops Analyzed: 15
+Total Districts Analyzed: 29
+Recommended Safe Crops: 4
+High-Risk Crops to Avoid: 2
+Safe Districts: 10
+High-Risk Districts: 5
+
+================================================================================
+1. CROP RECOMMENDATIONS
+================================================================================
+
+✅ RECOMMENDED CROPS (Low Risk - Safe to Grow):
+--------------------------------------------------------------------------------
+• 11
+  - Risk Score: 33.1
+  - Volatility: 7.7%
+  - Crash Frequency: 0.40%
+
+• 12
+  - Risk Score: 30.7
+  - Volatility: 12.3%
+  - Crash Frequency: 0.36%
+
+• 13
+  - Risk Score: 16.1
+  - Volatility: 5.6%
+  - Crash Frequency: 0.00%
+
+• 14
+  - Risk Score: 9.3
+  - Volatility: 1.3%
+  - Crash Frequency: 0.00%
+
+
+❌ CROPS TO AVOID (High Risk):
+--------------------------------------------------------------------------------
+• 0
+  - Risk Score: 64.9 (DANGEROUS)
+  - Volatility: 30.2%
+  - Why risky: High price swings, unpredictable
+
+• 1
+  - Risk Score: 59.8 (DANGEROUS)
+  - Volatility: 91.6%
+  - Why risky: High price swings, unpredictable
+
+
+================================================================================
+2. BEST SELLING TIMES (WHEN TO SELL FOR MAXIMUM PROFIT)
+================================================================================
+
+🌾 Rajgir
+   Best Month: November (₹600/quintal)
+   Worst Month: September (₹7/quintal)
+   Profit if you wait: ₹593/quintal (8471.4% more)
+   💡 Tip: Store harvest until November for best price!
+
+🌾 Kulthi
+   Best Month: August (₹7046/quintal)
+   Worst Month: November (₹4498/quintal)
+   Profit if you wait: ₹2549/quintal (56.7% more)
+   💡 Tip: Store harvest until August for best price!
+
+🌾 Cowpea
+   Best Month: September (₹7615/quintal)
+   Worst Month: February (₹5133/quintal)
+   Profit if you wait: ₹2481/quintal (48.3% more)
+   💡 Tip: Store harvest until September for best price!
+
+🌾 Turmeric
+   Best Month: March (₹9075/quintal)
+   Worst Month: February (₹6231/quintal)
+   Profit if you wait: ₹2844/quintal (45.6% more)
+   💡 Tip: Store harvest until March for best price!
+
+🌾 Jowar
+   Best Month: December (₹3123/quintal)
+   Worst Month: February (₹2297/quintal)
+   Profit if you wait: ₹825/quintal (35.9% more)
+   💡 Tip: Store harvest until December for best price!
+
+🌾 Bajra
+   Best Month: January (₹2739/quintal)
+   Worst Month: June (₹2367/quintal)
+   Profit if you wait: ₹372/quintal (15.7% more)
+   💡 Tip: Store harvest until January for best price!
+
+🌾 Sunflower
+   Best Month: November (₹5375/quintal)
+   Worst Month: June (₹4691/quintal)
+   Profit if you wait: ₹684/quintal (14.6% more)
+   💡 Tip: Store harvest until November for best price!
+
+🌾 Moong Dal
+   Best Month: April (₹7097/quintal)
+   Worst Month: October (₹6208/quintal)
+   Profit if you wait: ₹889/quintal (14.3% more)
+   💡 Tip: Store harvest until April for best price!
+
+🌾 Ragi
+   Best Month: September (₹5435/quintal)
+   Worst Month: April (₹4758/quintal)
+   Profit if you wait: ₹677/quintal (14.2% more)
+   💡 Tip: Store harvest until September for best price!
+
+🌾 wheat
+   Best Month: January (₹2911/quintal)
+   Worst Month: July (₹2640/quintal)
+   Profit if you wait: ₹272/quintal (10.3% more)
+   💡 Tip: Store harvest until January for best price!
+
+🌾 Rice
+   Best Month: July (₹4205/quintal)
+   Worst Month: April (₹3827/quintal)
+   Profit if you wait: ₹379/quintal (9.9% more)
+   💡 Tip: Store harvest until July for best price!
+
+🌾 Lentil
+   Best Month: August (₹7235/quintal)
+   Worst Month: April (₹6909/quintal)
+   Profit if you wait: ₹325/quintal (4.7% more)
+   💡 Tip: Store harvest until August for best price!
+
+
+================================================================================
+3. RISKY MONTHS (WHEN PRICE CRASHES HAPPEN)
+================================================================================
+
+🚨 HIGH RISK MONTHS (Be extra careful):
+--------------------------------------------------------------------------------
+• September: 0.41% crash rate (366 crashes)
+• June: 0.37% crash rate (343 crashes)
+• November: 0.36% crash rate (235 crashes)
+• October: 0.36% crash rate (278 crashes)
+• February: 0.35% crash rate (238 crashes)
+• July: 0.32% crash rate (270 crashes)
+
+✅ SAFE MONTHS (Fewer crashes):
+--------------------------------------------------------------------------------
+• March: 0.26% crash rate (229 crashes)
+• April: 0.25% crash rate (214 crashes)
+• May: 0.23% crash rate (247 crashes)
+
+
+================================================================================
+4. DISTRICT RECOMMENDATIONS
+================================================================================
+
+🔴 HIGH RISK DISTRICTS (Need extra caution):
+--------------------------------------------------------------------------------
+• 0: Risk Score 62.4
+  - Recommendation: Grow only low-risk crops, get insurance
+  - Why risky: 22.3% volatility
+
+• 1: Risk Score 53.9
+  - Recommendation: Grow only low-risk crops, get insurance
+  - Why risky: 20.3% volatility
+
+• 2: Risk Score 52.4
+  - Recommendation: Grow only low-risk crops, get insurance
+  - Why risky: 15.2% volatility
+
+• 3: Risk Score 52.3
+  - Recommendation: Grow only low-risk crops, get insurance
+  - Why risky: 11.8% volatility
+
+• 4: Risk Score 51.2
+  - Recommendation: Grow only low-risk crops, get insurance
+  - Why risky: 15.1% volatility
+
+
+🟢 LOW RISK DISTRICTS (Good for farming):
+--------------------------------------------------------------------------------
+• 19: Risk Score 34.6
+  - Recommendation: Can grow variety of crops safely
+  - Why safe: Only 7.8% volatility
+
+• 20: Risk Score 34.6
+  - Recommendation: Can grow variety of crops safely
+  - Why safe: Only 6.8% volatility
+
+• 21: Risk Score 33.9
+  - Recommendation: Can grow variety of crops safely
+  - Why safe: Only 6.7% volatility
+
+• 22: Risk Score 33.3
+  - Recommendation: Can grow variety of crops safely
+  - Why safe: Only 7.8% volatility
+
+• 23: Risk Score 30.3
+  - Recommendation: Can grow variety of crops safely
+  - Why safe: Only 9.3% volatility
+
+• 24: Risk Score 28.2
+  - Recommendation: Can grow variety of crops safely
+  - Why safe: Only 7.6% volatility
+
+• 25: Risk Score 24.2
+  - Recommendation: Can grow variety of crops safely
+  - Why safe: Only 8.7% volatility
+
+• 26: Risk Score 19.3
+  - Recommendation: Can grow variety of crops safely
+  - Why safe: Only 4.5% volatility
+
+• 27: Risk Score 12.9
+  - Recommendation: Can grow variety of crops safely
+  - Why safe: Only 3.0% volatility
+
+• 28: Risk Score 10.8
+  - Recommendation: Can grow variety of crops safely
+  - Why safe: Only 0.0% volatility
+
+
+================================================================================
+5. PRACTICAL TIPS FOR FARMERS
+================================================================================
+
+💡 WHEN TO SELL:
+• DON'T sell immediately after harvest (prices are lowest)
+• STORE for 1-2 months if possible
+• CHECK the best selling month for your crop (see section 2)
+• WATCH market prices daily using mobile apps
+
+💡 WHICH CROPS TO GROW:
+• CHOOSE low-risk crops if you can't afford losses
+• MIX safe and risky crops (diversification)
+• AVOID high-risk crops unless you have insurance
+• CHECK your district risk level first
+
+💡 PROTECT YOURSELF:
+• GET crop insurance (Pradhan Mantri Fasal Bima Yojana)
+• JOIN farmer groups for better prices
+• SAVE money during good price months
+• DON'T take big loans for risky crops
+
+💡 WATCH OUT FOR:
+• Risky months (see section 3)
+• Sudden price drops >10% = DANGER sign
+• Too much supply in market = prices will fall
+• Bad weather news = prices might jump
+
+================================================================================
+REPORT GENERATED: 2026-01-28 23:14:32
+================================================================================

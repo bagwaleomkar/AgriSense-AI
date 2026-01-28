@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriSense AI - Simple Farmer Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+        }
+        
+        /* Decision Card - Most Important */
+        .decision-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+            border: 5px solid #ffc107;
+        }
+        
+        .decision-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .decision-text {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ffc107;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .decision-message {
+            font-size: 1.5em;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Main Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .card-header {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        /* Price Card */
+        .price-display {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .crop-name {
+            font-size: 1.5em;
+            color: #666;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        .price-value {
+            font-size: 3em;
+            font-weight: bold;
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+        
+        .price-arrow {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #6c757d;
+        }
+        
+        /* 7-Day Outlook */
+        .outlook-table {
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .outlook-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            font-size: 1.2em;
+        }
+        
+        .outlook-day {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .outlook-price {
+            font-weight: bold;
+            color: #28a745;
+        }
+        
+        .outlook-arrow {
+            font-size: 1.5em;
+        }
+        
+        /* Risk Indicator */
+        .risk-indicator {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .risk-light {
+            font-size: 4em;
+            margin-bottom: 15px;
+        }
+        
+        .risk-status {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+        
+        .risk-reason {
+            font-size: 1.2em;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        /* Weather Summary */
+        .weather-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .weather-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .weather-question {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .weather-answer {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        
+        .weather-yes {
+            color: #28a745;
+        }
+        
+        .weather-no {
+            color: #dc3545;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            font-size: 1em;
+            opacity: 0.9;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .header p {
+                font-size: 1em;
+            }
+            
+            .decision-text {
+                font-size: 1.8em;
+            }
+            
+            .decision-message {
+                font-size: 1.2em;
+            }
+            
+            .price-value {
+                font-size: 2.5em;
+            }
+            
+            .weather-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🌾 AgriSense AI</h1>
+            <p>Smart Crop Price & Risk Prediction</p>
+        </div>
+        
+        <!-- Decision Card (TOP PRIORITY) -->
+        <div class="decision-card">
+            <div class="decision-icon">⏰</div>
+            <div class="decision-text">⏰ WAIT FOR BETTER PRICE</div>
+            <div class="decision-message">Wait 2-3 days. Price movement expected.</div>
+        </div>
+        
+        <!-- Main Content Grid -->
+        <div class="content-grid">
+            <!-- Today's Price -->
+            <div class="card">
+                <div class="card-header">📊 Today's Crop Price</div>
+                <div class="price-display">
+                    <div class="crop-name">WHEAT</div>
+                    <div class="price-value">₹2,600</div>
+                    <div class="price-arrow">➡️ STABLE</div>
+                </div>
+            </div>
+            
+            <!-- Risk Level -->
+            <div class="card">
+                <div class="card-header">🚦 Risk Level</div>
+                <div class="risk-indicator">
+                    <div class="risk-light">🟡</div>
+                    <div class="risk-status">🟡 MEDIUM RISK</div>
+                    <div class="risk-reason">Be careful, watch prices daily</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 7-Day Outlook -->
+        <div class="card">
+            <div class="card-header">📅 7-Day Price Outlook</div>
+            <div class="outlook-table">
+                <div class="outlook-row">
+                    <span class="outlook-day">Today</span>
+                    <span class="outlook-price">₹2,600</span>
+                    <span class="outlook-arrow">—</span>
+                </div>
+                <div class="outlook-row">
+                    <span class="outlook-day">+3 Days</span>
+                    <span class="outlook-price">₹2,621</span>
+                    <span class="outlook-arrow">📈</span>
+                </div>
+                <div class="outlook-row">
+                    <span class="outlook-day">+7 Days</span>
+                    <span class="outlook-price">₹2,650</span>
+                    <span class="outlook-arrow">📈</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Weather Summary -->
+        <div class="card">
+            <div class="card-header">🌤️ Weather Summary</div>
+            <div class="weather-grid">
+                <div class="weather-item">
+                    <div class="weather-question">Rain Expected?</div>
+                    <div class="weather-answer weather-no">No</div>
+                </div>
+                <div class="weather-item">
+                    <div class="weather-question">Good Time to Sell?</div>
+                    <div class="weather-answer weather-yes">Yes</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>🌾 AgriSense AI - Helping farmers make better decisions</p>
+            <p>Updated: January 28, 2026 at 11:45 PM</p>
+        </div>
+    </div>
+</body>
+</html>
+    
