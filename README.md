@@ -2,9 +2,13 @@
 
 Smart agricultural dashboard system with multi-language support for farmers.
 
+## 🌐 Live Demo
+
+**[🚀 View Live Dashboard](https://agrisensehelper.netlify.app/)**
+
 ## 🚀 Quick Start
 
-Open `index.html` in your browser to access the main dashboard.
+Open `index.html` in your browser to access the main dashboard locally.
 
 ## 📸 Dashboard Screenshots
 
