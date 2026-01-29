@@ -52,6 +52,44 @@
             font-weight: 500;
         }
         
+        /* View Toggle Button */
+        .view-toggle {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            display: flex;
+            gap: 8px;
+        }
+        
+        .view-btn {
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .view-btn:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .view-btn.active {
+            background: white;
+            color: #059669;
+            border-color: white;
+        }
+        
         .header h1 {
             font-size: 2.5rem;
             margin-bottom: 8px;
@@ -423,6 +461,10 @@
     <div class="dashboard-container">
         <!-- Header -->
         <div class="header">
+            <div class="view-toggle">
+                <a href="index.html" class="view-btn active">📊 Detailed View</a>
+                <a href="dashboards/Simple_Farmer_Dashboard.html" class="view-btn">🌾 Simple View</a>
+            </div>
             <div class="date-time" id="datetime"></div>
             <h1>🌾 AgriSense AI Dashboard</h1>
             <p>Smart Crop Price & Risk Prediction System for Farmers</p>

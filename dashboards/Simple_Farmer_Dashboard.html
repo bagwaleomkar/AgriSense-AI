@@ -219,6 +219,69 @@
             opacity: 0.9;
         }
         
+        /* Language Toggle */
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border-radius: 30px;
+            padding: 10px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+        
+        /* View Toggle */
+        .view-toggle {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: white;
+            border-radius: 15px;
+            padding: 8px 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        
+        .view-link {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.95em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+        
+        .view-link:hover {
+            color: #764ba2;
+            transform: scale(1.05);
+        }
+        
+        .lang-btn {
+            padding: 8px 18px;
+            border: none;
+            border-radius: 20px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .lang-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .lang-btn:hover {
+            transform: scale(1.05);
+        }
+        
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .header h1 {
@@ -244,63 +307,85 @@
             .weather-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .language-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 8px 15px;
+            }
+            
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Language Toggle -->
+        <div class="language-toggle">
+            <button class="lang-btn active" onclick="changeLanguage('en')" id="btn-en">EN</button>
+            <button class="lang-btn" onclick="changeLanguage('mr')" id="btn-mr">MR</button>
+        </div>
+        
+        <!-- View Toggle -->
+        <div class="view-toggle">
+            <a href="../index.html" class="view-link">📊 Detailed View</a>
+        </div>
+        
         <!-- Header -->
         <div class="header">
             <h1>🌾 AgriSense AI</h1>
-            <p>Smart Crop Price & Risk Prediction</p>
+            <p data-lang="subtitle">Smart Crop Price & Risk Prediction</p>
         </div>
         
         <!-- Decision Card (TOP PRIORITY) -->
         <div class="decision-card">
             <div class="decision-icon">⏰</div>
-            <div class="decision-text">⏰ WAIT FOR BETTER PRICE</div>
-            <div class="decision-message">Wait 2-3 days. Price movement expected.</div>
+            <div class="decision-text" data-lang="decision">⏰ WAIT FOR BETTER PRICE</div>
+            <div class="decision-message" data-lang="decision-msg">Wait 2-3 days. Price movement expected.</div>
         </div>
         
         <!-- Main Content Grid -->
         <div class="content-grid">
             <!-- Today's Price -->
             <div class="card">
-                <div class="card-header">📊 Today's Crop Price</div>
+                <div class="card-header" data-lang="today-price">📊 Today's Crop Price</div>
                 <div class="price-display">
                     <div class="crop-name">WHEAT</div>
                     <div class="price-value">₹2,600</div>
-                    <div class="price-arrow">➡️ STABLE</div>
+                    <div class="price-arrow" data-lang="stable">➡️ STABLE</div>
                 </div>
             </div>
             
             <!-- Risk Level -->
             <div class="card">
-                <div class="card-header">🚦 Risk Level</div>
+                <div class="card-header" data-lang="risk-level">🚦 Risk Level</div>
                 <div class="risk-indicator">
                     <div class="risk-light">🟡</div>
-                    <div class="risk-status">🟡 MEDIUM RISK</div>
-                    <div class="risk-reason">Be careful, watch prices daily</div>
+                    <div class="risk-status" data-lang="medium-risk">🟡 MEDIUM RISK</div>
+                    <div class="risk-reason" data-lang="risk-reason">Be careful, watch prices daily</div>
                 </div>
             </div>
         </div>
         
         <!-- 7-Day Outlook -->
         <div class="card">
-            <div class="card-header">📅 7-Day Price Outlook</div>
+            <div class="card-header" data-lang="price-outlook">📅 7-Day Price Outlook</div>
             <div class="outlook-table">
                 <div class="outlook-row">
-                    <span class="outlook-day">Today</span>
+                    <span class="outlook-day" data-lang="today">Today</span>
                     <span class="outlook-price">₹2,600</span>
                     <span class="outlook-arrow">—</span>
                 </div>
                 <div class="outlook-row">
-                    <span class="outlook-day">+3 Days</span>
+                    <span class="outlook-day" data-lang="plus3">+3 Days</span>
                     <span class="outlook-price">₹2,621</span>
                     <span class="outlook-arrow">📈</span>
                 </div>
                 <div class="outlook-row">
-                    <span class="outlook-day">+7 Days</span>
+                    <span class="outlook-day" data-lang="plus7">+7 Days</span>
                     <span class="outlook-price">₹2,650</span>
                     <span class="outlook-arrow">📈</span>
                 </div>
@@ -309,25 +394,99 @@
         
         <!-- Weather Summary -->
         <div class="card">
-            <div class="card-header">🌤️ Weather Summary</div>
+            <div class="card-header" data-lang="weather-summary">🌤️ Weather Summary</div>
             <div class="weather-grid">
                 <div class="weather-item">
-                    <div class="weather-question">Rain Expected?</div>
-                    <div class="weather-answer weather-no">No</div>
+                    <div class="weather-question" data-lang="rain-expected">Rain Expected?</div>
+                    <div class="weather-answer weather-no" data-lang="no">No</div>
                 </div>
                 <div class="weather-item">
-                    <div class="weather-question">Good Time to Sell?</div>
-                    <div class="weather-answer weather-yes">Yes</div>
+                    <div class="weather-question" data-lang="good-time">Good Time to Sell?</div>
+                    <div class="weather-answer weather-yes" data-lang="yes">Yes</div>
                 </div>
             </div>
         </div>
         
         <!-- Footer -->
         <div class="footer">
-            <p>🌾 AgriSense AI - Helping farmers make better decisions</p>
-            <p>Updated: January 28, 2026 at 11:45 PM</p>
+            <p data-lang="footer-text">🌾 AgriSense AI - Helping farmers make better decisions</p>
+            <p data-lang="updated">Updated: January 28, 2026 at 11:45 PM</p>
         </div>
     </div>
+    
+    <script>
+        // Translation object
+        const translations = {
+            en: {
+                'subtitle': 'Smart Crop Price & Risk Prediction',
+                'decision': '⏰ WAIT FOR BETTER PRICE',
+                'decision-msg': 'Wait 2-3 days. Price movement expected.',
+                'today-price': '📊 Today\'s Crop Price',
+                'stable': '➡️ STABLE',
+                'risk-level': '🚦 Risk Level',
+                'medium-risk': '🟡 MEDIUM RISK',
+                'risk-reason': 'Be careful, watch prices daily',
+                'price-outlook': '📅 7-Day Price Outlook',
+                'today': 'Today',
+                'plus3': '+3 Days',
+                'plus7': '+7 Days',
+                'weather-summary': '🌤️ Weather Summary',
+                'rain-expected': 'Rain Expected?',
+                'no': 'No',
+                'good-time': 'Good Time to Sell?',
+                'yes': 'Yes',
+                'footer-text': '🌾 AgriSense AI - Helping farmers make better decisions',
+                'updated': 'Updated: January 28, 2026 at 11:45 PM'
+            },
+            mr: {
+                'subtitle': 'स्मार्ट पीक किंमत आणि धोका अंदाज',
+                'decision': '⏰ थांबा',
+                'decision-msg': '२-३ दिवस थांबा. किंमतीत बदल अपेक्षित आहे.',
+                'today-price': '📊 आजचा दर',
+                'stable': '➡️ स्थिर',
+                'risk-level': '🚦 धोका पातळी',
+                'medium-risk': '🟡 मध्यम धोका',
+                'risk-reason': 'सावधगिरी बाळगा, रोज किंमत पहा',
+                'price-outlook': '📅 ७ दिवसांचा दराचा कल',
+                'today': 'आज',
+                'plus3': '+३ दिवस',
+                'plus7': '+७ दिवस',
+                'weather-summary': '🌤️ हवामान सारांश',
+                'rain-expected': 'पाऊस अपेक्षित आहे?',
+                'no': 'नाही',
+                'good-time': 'विक्री करण्यास चांगली वेळ?',
+                'yes': 'होय',
+                'footer-text': '🌾 AgriSense AI - शेतकऱ्यांना चांगले निर्णय घेण्यास मदत करतो',
+                'updated': 'अपडेट केले: जानेवारी २८, २०२६ रात्री ११:४५ वाजता'
+            }
+        };
+        
+        // Initialize with English
+        let currentLang = 'en';
+        
+        // Change language function
+        function changeLanguage(lang) {
+            currentLang = lang;
+            
+            // Update button states
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-mr').classList.toggle('active', lang === 'mr');
+            
+            // Update all elements with data-lang attribute
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-lang');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+        }
+        
+        // Set default language on load
+        window.onload = function() {
+            changeLanguage('en');
+        };
+    </script>
 </body>
 </html>
     
