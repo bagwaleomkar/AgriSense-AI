@@ -6,7 +6,7 @@ Smart agricultural dashboard system with multi-language support for farmers.
 
 Open `index.html` in your browser to access the main dashboard.
 
-## � Dashboard Screenshots
+## 📸 Dashboard Screenshots
 
 ### Modern Dashboard (Detailed View)
 ![Modern Dashboard](reports/Dashboard_Modern_View.png)

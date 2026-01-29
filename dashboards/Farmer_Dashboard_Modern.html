@@ -705,10 +705,61 @@
             Plotly.newPlot("overview-chart", overviewData, overviewLayout, {"responsive": true});
         }
 
-        // Price Trend Chart (extracted data - showing actual data structure)
+        // Price Trend Chart (with sample data for 12 months)
         if (document.getElementById("price-trend-chart")) {
-            // Note: Full data available in original file, using representative subset here
-            Plotly.newPlot("price-trend-chart", [], {"font":{"size":12},"legend":{"orientation":"h","yanchor":"bottom","y":1.02,"xanchor":"right","x":1},"title":{"text":""},"xaxis":{"title":{"text":"Date"}},"yaxis":{"title":{"text":"Price (₹ per quintal)"}},"hovermode":"x unified","height":400,"showlegend":true}, {"responsive": true});
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            
+            const priceTrendData = [
+                {
+                    x: months,
+                    y: [2670, 2607, 2569, 2572, 2602, 2591, 2595, 2621, 2605, 2594, 2589, 2629],
+                    name: 'Wheat',
+                    type: 'scatter',
+                    mode: 'lines+markers',
+                    line: {color: '#10b981', width: 3},
+                    marker: {size: 8}
+                },
+                {
+                    x: months,
+                    y: [2100, 2150, 2200, 2180, 2250, 2300, 2280, 2320, 2350, 2380, 2340, 2342],
+                    name: 'Jowar',
+                    type: 'scatter',
+                    mode: 'lines+markers',
+                    line: {color: '#f59e0b', width: 3},
+                    marker: {size: 8}
+                },
+                {
+                    x: months,
+                    y: [3100, 3150, 3180, 3200, 3220, 3180, 3160, 3190, 3210, 3195, 3185, 3195],
+                    name: 'Rice',
+                    type: 'scatter',
+                    mode: 'lines+markers',
+                    line: {color: '#3b82f6', width: 3},
+                    marker: {size: 8}
+                },
+                {
+                    x: months,
+                    y: [7100, 7150, 7200, 7250, 7280, 7300, 7320, 7260, 7240, 7220, 7250, 7267],
+                    name: 'Moong Dal',
+                    type: 'scatter',
+                    mode: 'lines+markers',
+                    line: {color: '#8b5cf6', width: 3},
+                    marker: {size: 8}
+                }
+            ];
+            
+            const priceTrendLayout = {
+                font: {size: 12},
+                legend: {orientation: 'h', yanchor: 'bottom', y: 1.02, xanchor: 'right', x: 1},
+                title: {text: ''},
+                xaxis: {title: {text: 'Month'}},
+                yaxis: {title: {text: 'Price (₹ per quintal)'}},
+                hovermode: 'x unified',
+                height: 400,
+                showlegend: true
+            };
+            
+            Plotly.newPlot("price-trend-chart", priceTrendData, priceTrendLayout, {responsive: true});
         }
 
         // Selling Times Chart
