@@ -10,19 +10,22 @@ Open `index.html` in your browser to access the main dashboard.
 
 ### Modern Dashboard (Detailed View)
 ![Modern Dashboard](reports/Dashboard_Modern_View.png)
+
 *Comprehensive analytics with price trends, weather impact, and predictions*
 
 ### Simple Farmer Dashboard (English)
 ![Simple Dashboard - English](reports/Dashboard_Simple_EN.png)
+
 *Easy-to-understand interface with clear sell/wait decisions*
 
 ### Simple Farmer Dashboard (Marathi)
 ![Simple Dashboard - Marathi](reports/Dashboard_Simple_MR.png)
+
 *Multi-language support for local farmers (मराठी)*
 
 ---
 
-## �📂 Project Structure
+## 📂 Project Structure
 
 ```
 AgroPredict AI/
